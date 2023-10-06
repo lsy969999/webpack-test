@@ -1,0 +1,9 @@
+// tsconfig.json
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "es6",
+      "esModuleInterop": true, // commonJS 모듈을 ES6로 import
+      "sourceMap": false, // 디버깅 맵
+    }
+  }

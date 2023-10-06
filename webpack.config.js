@@ -7,7 +7,8 @@ module.exports = {
     //시작점
     entry: {
         //시작점 여러개 정할수 있음
-        main: path.resolve(__dirname, 'src/index.js')
+        main: path.resolve(__dirname, 'src/index.js'),
+        test: path.resolve(__dirname, 'src/index.ts'),
     },
     //웹팩 작업을 통해 생성된 결과물
     output: {
@@ -42,7 +43,13 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/,
                 type: 'asset/resource'
-            }
+            },
+            //ts
+            {
+                test: /\.ts$/,
+                use: 'ts-loader',
+                exclude: /node_modules/,
+            },
         ]
     },
     //plugin 은 이미 로더로인해 output으로 변화된 결과물을 변형시키는 것
@@ -52,7 +59,8 @@ module.exports = {
             filename: 'index.html',
             template: 'src/index.html'
         }),
-        new BundleAnalyzerPlugin()
+        //필요시 주석 해제
+        // new BundleAnalyzerPlugin()
     ],
     devtool: 'source-map',
     devServer: {

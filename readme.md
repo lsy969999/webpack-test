@@ -23,3 +23,8 @@ npm install -D babel-loader @babel/core @babel/preset-env
 ```
 npm install webpack-bundle-analyzer --save-dev
 ```
+
+
+```
+npm install --save-dev typescript ts-loader
+```
